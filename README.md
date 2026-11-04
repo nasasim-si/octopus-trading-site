@@ -26,9 +26,9 @@ npm run build      # production build check
 
 ## Edit company details
 
-All company facts live in `lib/company.js`. Values in `[brackets]` are placeholders still to be supplied by the client:
-address, phone, email, website and working hours. Once a real email is set, the "Request a quotation" buttons
-open an email with the subject "Quotation request" instead of scrolling to the contact section.
+All company facts live in `lib/company.js`. `website` and `hours` are `null` (hidden) until the client supplies them.
+The "Request a quotation" buttons open an email to the company address with the subject "Quotation request";
+phone and email in the contact section and footer are tap-to-call / tap-to-email links.
 
 After the domain is known, add `metadataBase: new URL('https://<domain>')` to `metadata` in `app/layout.jsx`
 so social previews use absolute image URLs.

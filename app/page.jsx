@@ -3,7 +3,7 @@ import Nav from '@/components/Nav';
 import Logo from '@/components/Logo';
 import Button from '@/components/Button';
 import EightArms from '@/components/EightArms';
-import { company, quoteHref, trades, values, reasons, steps } from '@/lib/company';
+import { company, quoteHref, telHref, trades, values, reasons, steps } from '@/lib/company';
 
 function Kicker({ children, tone = 'ink' }) {
   return <p className={`kicker kicker--${tone}`}>{children}</p>;
@@ -196,10 +196,10 @@ export default function Home() {
                 <h3>Contact details</h3>
                 <dl>
                   <div><dt>Address</dt><dd>{company.address}</dd></div>
-                  <div><dt>Phone</dt><dd>{company.phone}</dd></div>
-                  <div><dt>Email</dt><dd>{company.email}</dd></div>
-                  <div><dt>Website</dt><dd>{company.website}</dd></div>
-                  <div><dt>Working hours</dt><dd>{company.hours}</dd></div>
+                  <div><dt>Phone</dt><dd><a href={telHref}>{company.phone}</a></dd></div>
+                  <div><dt>Email</dt><dd><a href={`mailto:${company.email}`}>{company.email}</a></dd></div>
+                  {company.website && <div><dt>Website</dt><dd>{company.website}</dd></div>}
+                  {company.hours && <div><dt>Working hours</dt><dd>{company.hours}</dd></div>}
                 </dl>
               </div>
               <div className="panel">
@@ -242,8 +242,8 @@ export default function Home() {
                 <h4>Head office</h4>
                 <ul>
                   <li>{company.headOffice}</li>
-                  <li>{company.phone}</li>
-                  <li>{company.email}</li>
+                  <li><a href={telHref}>{company.phone}</a></li>
+                  <li><a href={`mailto:${company.email}`}>{company.email}</a></li>
                 </ul>
               </div>
             </div>

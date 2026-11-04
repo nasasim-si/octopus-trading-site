@@ -310,3 +310,5 @@ h3 { font-family: var(--display); font-weight: 600; }
   html { scroll-behavior: auto; }
   *, *::before, *::after { transition: none !important; }
 }
+.panel dd a { text-decoration: none; }
+.panel dd a:hover { text-decoration: underline; text-underline-offset: 4px; }
