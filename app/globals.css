@@ -194,7 +194,7 @@ h3 { font-family: var(--display); font-weight: 600; }
 
 /* Contact */
 .panels { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; }
-.panel { background: rgba(255, 255, 255, .06); border: 1px solid rgba(255, 255, 255, .16); border-radius: 8px; padding: 32px 40px 24px; }
+.panel { display: flex; flex-direction: column; background: rgba(255, 255, 255, .06); border: 1px solid rgba(255, 255, 255, .16); border-radius: 8px; padding: 32px 40px 24px; }
 .panel h3 { font-size: 24px; line-height: 30px; margin-bottom: 16px; }
 .panel dl div { display: grid; grid-template-columns: 190px 1fr; gap: 16px; padding-block: 14px; border-top: 1px solid rgba(255, 255, 255, .16); }
 .panel dt { font-size: 14px; line-height: 21px; opacity: .7; }
@@ -312,3 +312,10 @@ h3 { font-family: var(--display); font-weight: 600; }
 }
 .panel dd a { text-decoration: none; }
 .panel dd a:hover { text-decoration: underline; text-underline-offset: 4px; }
+
+.panel__actions { display: flex; flex-wrap: wrap; gap: 12px; margin-top: auto; padding-top: 28px; padding-bottom: 8px; }
+@media (max-width: 900px) {
+  .panel__actions { padding-top: 20px; padding-bottom: 12px; }
+  .panel__actions .btn { width: 100%; }
+  .panel__actions .btn__label { flex: 1; }
+}

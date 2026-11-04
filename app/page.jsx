@@ -201,6 +201,10 @@ export default function Home() {
                   {company.website && <div><dt>Website</dt><dd>{company.website}</dd></div>}
                   {company.hours && <div><dt>Working hours</dt><dd>{company.hours}</dd></div>}
                 </dl>
+                <div className="panel__actions">
+                  <Button href={quoteHref}>Email for a quotation</Button>
+                  <Button href={telHref} variant="ghost">Call us</Button>
+                </div>
               </div>
               <div className="panel">
                 <h3>Company snapshot</h3>
